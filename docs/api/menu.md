@@ -143,7 +143,7 @@ var template = [
 ];
 
 if (process.platform == 'darwin') {
-  var name = require('electron').app.getName();
+  var name = require('electron').remote.app.getName();
   template.unshift({
     label: name,
     submenu: [
@@ -182,7 +182,7 @@ if (process.platform == 'darwin') {
       {
         label: 'Quit',
         accelerator: 'Command+Q',
-        click: function() { app.quit(); }
+        click: function() { remote.app.quit(); }
       },
     ]
   });
